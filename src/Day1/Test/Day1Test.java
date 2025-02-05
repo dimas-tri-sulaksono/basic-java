@@ -26,7 +26,7 @@ public class Day1Test {
                         primeNumbers = primeNumbers + i + " ";
                     }
                 }
-                System.out.println("bilangan prima dari 1 sampai "+ cekSampaiAngkaBerapa +" adalah :");
+                System.out.println("\nbilangan prima dari 1 sampai "+ cekSampaiAngkaBerapa +" adalah :");
                 System.out.println(primeNumbers);
 
         /* 2. buat logic untuk nyari nilai terbesar dan terkecil dari sebuah array pake math method */
@@ -39,7 +39,7 @@ public class Day1Test {
             min = Math.min(min ,angka[soal2]);
         }
 
-        System.out.println("nilai terbesar : "+ max);
+        System.out.println("\nnilai terbesar : "+ max);
         System.out.println("nilai terkecil : "+ min);
 
         /* 3. buat logic untuk nyari jumlah elemen yang nilainya genap dan jumlah elemen yang nilainya ganjil dari array angka */
@@ -49,7 +49,7 @@ public class Day1Test {
                 genap.add(number);
             }
         }
-        System.out.println("jumlah elemen dengan nilai genap : "+ genap.size() + " elemen");
+        System.out.println("\njumlah elemen dengan nilai genap : "+ genap.size() + " elemen");
         System.out.println("jumlah elemen dengan nilai ganjil : "+ (angka.length - genap.size()) + " elemen");
 
         /* 4. buat logic untuk menghitung jumlah karakter dalam sebuah string */
@@ -67,11 +67,60 @@ public class Day1Test {
             }
 
         }
-        System.out.println("jumlah huruf vokal dalam string \""+ kata +"\" adalah "+ vokal +" huruf");
+        System.out.println("\njumlah huruf vokal dalam string \""+ kata +"\" adalah "+ vokal +" huruf");
 
         /* 6. buat array yag tediri dari 5 mahasiswa, masing-masing punya 3 nilai: ujian, absen, kuis
         *     kalkulasi nilai mereka berdasarkan rata-rata nilai dari 3 nilai tersebut
         *     lalu tentukan Grade mereka berdasarkan nilai rata-rata menggunakan logic if-else dan ENUM */
+
+        Double [][][] mahasiswa = {
+                {
+                    {70.0,60.0,80.0}
+                },
+                {
+                    {90.0,70.0,50.0}
+                },
+                {
+                    {83.0,85.0,87.0}
+                },
+                {
+                    {90.0,95.0,100.0}
+                },
+                {
+                    {73.0,85.0,81.0}
+                }
+        };
+
+        enum Grade {
+            Lulus,
+            Tidak_Lulus
+        }
+
+        ArrayList<Double> daftarNilai = new ArrayList<>();
+
+        // cara nambahin data / elemen ke dalam arraylist
+        Double sum = 0.0;
+        for (int j = 0; j < mahasiswa.length; j++) {
+            for (int k = 0; k < mahasiswa[j][0].length; k++) {
+                sum = sum + mahasiswa[j][0][k];
+            }
+            daftarNilai.add(sum);
+            sum = 0.0;
+        }
+
+        for (int j = 0; j < daftarNilai.size(); j++) {
+             daftarNilai.set(j, daftarNilai.get(j)/3);
+        }
+
+        System.out.println("\nnilai : "+daftarNilai);
+
+        for (double gradeMhs : daftarNilai){
+            if(gradeMhs >= 85.0 ){
+                System.out.println("selamat kamu "+ Grade.Lulus);
+            } else {
+                System.out.println("sayang sekali kamu "+ Grade.Tidak_Lulus);
+            }
+        }
 
 
     }
