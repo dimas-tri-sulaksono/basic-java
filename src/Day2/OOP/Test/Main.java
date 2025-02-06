@@ -9,7 +9,7 @@ package Day2.OOP.Test;
 
 public class Main {
     public static void main(String[] args) {
-        Student dtStudent = new Student(1,"dimas",90);
+        Student dtStudent = new Student(0,"nama",10);
         dtStudent.addStudent(1,"dimas",90);
         dtStudent.addStudent(2,"tri",95);
         dtStudent.addStudent(3,"sulaksono",100);
@@ -22,6 +22,6 @@ public class Main {
         dtStudent.countAvg();
 
         // nilai tertinggi
-        dtStudent.maxScore();
+        // dtStudent.maxScore();
     }
 }

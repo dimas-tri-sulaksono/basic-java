@@ -17,13 +17,16 @@ public class Student {
         students = new ArrayList<>();
     }
 
-    public int nilaiTotal, nilaiAvg = 0;
+    public int nilaiTotal, nilaiAvg, max = 0;
     public void countAvg(){
         for(Student student : students){
             nilaiTotal = nilaiTotal + student.score;
+            max = Math.max(max,student.score);
         }
         nilaiAvg = nilaiTotal/students.size();
         System.out.println("\nnilai rata-rata : "+ nilaiAvg);
+
+        System.out.println("\nnilai tertinggi : "+ max);
 
         System.out.println("\nsiswa dengan nilai di atas rata-rata: ");
         for (Student student: students){
@@ -33,13 +36,13 @@ public class Student {
         }
     };
 
-    int max = 0;
-    public void maxScore(){
-        for (Student student : students){
-            max = Math.max(max,student.score);
-        }
-        System.out.println("\nnilai tertinggi : "+ max);
-    }
+    //int max = 0;
+    //public void maxScore(){
+    //    for (Student student : students){
+    //        max = Math.max(max,student.score);
+    //    }
+    //    System.out.println("\nnilai tertinggi : "+ max);
+    //}
 
     // gatter & setter
     public Integer getId(){return id;}
