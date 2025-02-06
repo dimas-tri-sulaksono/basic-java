@@ -13,7 +13,7 @@ public class HashSetExample {
         himpunanNama.add("sulaksono");
         himpunanNama.add("dimas");
 
-        System.out.println("set nama : "+ himpunanNama);
+        System.out.println("set name : "+ himpunanNama);
 
     }
 }

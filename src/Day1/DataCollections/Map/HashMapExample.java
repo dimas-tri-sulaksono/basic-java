@@ -10,11 +10,11 @@ public class HashMapExample {
         HashMap<String, String> daftarNama = new HashMap<>();
 
         // nambahin data ke hashMap
-        daftarNama.put("nama","dimas");
+        daftarNama.put("name","dimas");
         daftarNama.put("umur","26");
         daftarNama.put("job","fullstack");
 
-        System.out.println("nama : "+ daftarNama.get("nama"));
+        System.out.println("name : "+ daftarNama.get("name"));
         System.out.println("umur : "+ daftarNama.get("umur"));
         System.out.println("job : "+ daftarNama.get("job"));
 
@@ -40,7 +40,7 @@ public class HashMapExample {
         }
 
         // ngecek ukuran data
-        daftarNama.put("nama", "Dimaz");
+        daftarNama.put("name", "Dimaz");
         System.out.println("  "+ daftarNama.size());
     }
 }

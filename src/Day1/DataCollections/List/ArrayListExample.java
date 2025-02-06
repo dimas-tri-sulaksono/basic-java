@@ -40,13 +40,13 @@ public class ArrayListExample {
         System.out.println("apakah array list kosong? "+ daftarNama.isEmpty());
 
         // cek apakah elemen tertentu ada di dalam array list
-        System.out.println("nama Dimas ada di dalam daftar? "+ daftarNama.contains("Dimas"));
+        System.out.println("name Dimas ada di dalam daftar? "+ daftarNama.contains("Dimas"));
 
         // ngambil indek di element tertentu
         System.out.println("indeks Dimas : "+ daftarNama.indexOf("Dimas"));
 
         // menampilkan semua elemen dalam array list
-        System.out.println("daftar nama : "+ daftarNama);
+        System.out.println("daftar name : "+ daftarNama);
 
         // menampilkan semua daya pakai looping
         for (String nama : daftarNama){

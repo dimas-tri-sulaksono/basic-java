@@ -19,7 +19,7 @@ public class Basic {
 
         Boolean isStudent = false;
 
-        System.out.println("nama aku " + name + " umurku " + age + " dan status siswaku " +isStudent);
+        System.out.println("name aku " + name + " umurku " + age + " dan status siswaku " +isStudent);
 
         // array di JAVA punya ukuran data yang statis, ngga bisa sembarangan ubah (tambah datanya) dan cuma bisa nyimpen 1 tipe data
         System.out.println("===Array===");
