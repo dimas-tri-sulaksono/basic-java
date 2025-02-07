@@ -34,7 +34,7 @@ public class Student {
                 System.out.println("nama : "+ student.name +", nilai: "+student.score);
             }
         }
-    };
+    }
 
     //int max = 0;
     //public void maxScore(){
