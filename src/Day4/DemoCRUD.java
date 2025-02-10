@@ -1,10 +1,7 @@
 package Day4;
 
 import java.sql.*;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -176,7 +173,16 @@ public class DemoCRUD {
             preparedStatement.setInt(2, qty);
             preparedStatement.setDate(3, Date.valueOf(LocalDate.now()));
 
-            preparedStatement.executeUpdate();
+            // eksekusi query
+            int rowsUpdated = preparedStatement.executeUpdate();
+
+            // kondisi untuk cek apa ada data yang diupdate
+            if(rowsUpdated > 0){
+                System.out.println("order berhasil ditambahkan!");
+            } else {
+                System.out.println("product dengan id "+ product_id +" tidak ditemukan");
+            }
+
         } catch (SQLException e){
             //throw new RuntimeException(e);
             System.out.println("ID product tidak ada");
