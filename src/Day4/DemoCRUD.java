@@ -1,6 +1,10 @@
 package Day4;
 
 import java.sql.*;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -153,6 +157,32 @@ public class DemoCRUD {
         }
     }
 
+    public void addOrder(){
+        System.out.println("Masukkan id product : ");
+        int product_id = input.nextInt();
+        input.nextLine();
+
+        System.out.println("Masukkan jumlah produk : ");
+        int qty = input.nextInt();
+        input.nextLine();
+
+        try{
+            // DriverManager.getConnection : buat ngehubungin ke database
+            Connection connection = DriverManager.getConnection(url, username, password);
+
+            // PreparedStatement untuk mengeksekusi quey yang punya jumlah data banyak. (?, ?, ?) pada value buat cegah SQL injection
+            PreparedStatement preparedStatement =connection.prepareStatement("insert into orders (product_id, quantity, order_date) values (?,?,?)");
+            preparedStatement.setInt(1, product_id);
+            preparedStatement.setInt(2, qty);
+            preparedStatement.setDate(3, Date.valueOf(LocalDate.now()));
+
+            preparedStatement.executeUpdate();
+        } catch (SQLException e){
+            //throw new RuntimeException(e);
+            System.out.println("ID product tidak ada");
+        }
+    }
+
     public static void main(String[] args) {
         DemoCRUD demo = new DemoCRUD();
         Scanner input = new Scanner(System.in);
@@ -184,6 +214,7 @@ public class DemoCRUD {
                     demo.deleteData();
                     break;
                 case 5:
+                    demo.addOrder();
                     break;
                 case 0:
                     System.out.println("Thank you, have a good day!");
