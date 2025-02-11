@@ -1,0 +1,2 @@
+nama: jeruk, price: 123.0, category: buah
+nama: apel, price: 183.0, category: buah
